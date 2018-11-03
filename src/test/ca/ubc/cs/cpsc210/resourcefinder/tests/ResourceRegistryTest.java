@@ -49,4 +49,12 @@ public class ResourceRegistryTest {
         testRegistry.addResource(r3);
         testRegistry.addResource(r4);
     }
+
+    @Test
+    public void testAddOneResource() {
+        testRegistry.addResource(r1);
+        List<Resource> resources = testRegistry.getResources();
+        assertEquals(1, resources.size());
+        assertTrue(resources.contains(r1));
+    }
 }

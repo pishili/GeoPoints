@@ -10,48 +10,57 @@ public class Resource {
 
     // EFFECTS: constructs resource with given name and contact information
     public Resource(String name, ContactInfo contactInfo) {
-        // stub
+        this.name = name;
+        this.contactInfo = contactInfo;
+        this.services = new HashSet<>();
     }
 
     public String getName() {
-        return null;  // stub
+        return name;  // stub
     }
 
     public ContactInfo getContactInfo() {
-        return null;  // stub
+        return contactInfo;  // stub
     }
 
     // EFFECTS: returns true if this resource offers the given service
     public boolean offersService(Service service) {
-        return false;  // stub
+        return services.contains(service);
     }
 
     // EFFECTS: returns true if this resource offers all services in the requestedServices set; false otherwise
     //          (returns true if given the empty set)
     public boolean offersAllServicesInSet(Set<Service> requestedServices) {
-        return false;  // stub
+        return services.containsAll(requestedServices);
     }
 
     // EFFECTS: returns true if this resources offers any of the services in requestedServices set; false otherwise
     //          (returns false if given the empty set)
     public boolean offersAnyServicesInSet(Set<Service> requestedServices) {
-        return false;  // stub
-    }
 
-    // MODIFIES: this
-    // EFFECTS: adds service to this resource, if it's not already added
-    public void addService(Service service) {
-        // stub
-    }
+        for (Service service : services) {
+            if (requestedService.contains(service)) {
+                return true;
+            }
+            return false;
+        }
 
-    // MODIFIES: this
-    // EFFECTS: removes service from this resource
-    public void removeService(Service service) {
-        // stub
-    }
+        // MODIFIES: this
+        // EFFECTS: adds service to this resource, if it's not already added
+        public void addService (Service service) {
+           services.add(service);
+        }
 
-    // EFFECTS: returns services offered by this resource as unmodifiable set
-    public Set<Service> getServices() {
-        return null;   // stub
+        // MODIFIES: this
+        // EFFECTS: removes service from this resource
+        public void removeService (Service service){
+            services.remove(service);
+        }
+
+        // EFFECTS: returns services offered by this resource as unmodifiable set
+        public Set<Service> getServices () {
+
+            return services;   // stub
+        }
     }
 }

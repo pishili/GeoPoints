@@ -12,12 +12,25 @@ public class ResourceTest {
 
     @BeforeEach
     public void runBefore() {
+
         testResource = new Resource("Family Services", null);
+    }
+        testResource.addService(Service.FOOD);
+        testResource.addService(Service.SHELTER);
+
+
+    @Test
+    public void tesGetName() {
+        // template for unit tests
+        assertEquals("Family Services", testResource.getName());
+        fail("Test not implemented");
     }
 
     @Test
-    public void testXXXXXX() {
-        // template for unit tests
-        fail("Test not implemented");
+    public void testOffersAnyServicesInSet() {
+        testResource.services.add(Service.SHELTER)
+
+
+
     }
 }
