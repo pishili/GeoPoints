@@ -1,6 +1,10 @@
 package ca.ubc.cs.cpsc210.resourcefinder.model;
 
 import java.util.Set;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 // Represents the state of user's selection of services
 public class SelectionState {
@@ -38,7 +42,7 @@ public class SelectionState {
     // EFFECTS: remove service from selected services
     public void deselectService(Service service) {
         // stub
-        service.remove(service);
+        selected.remove(service);
     }
 
     // MODIFIES: this

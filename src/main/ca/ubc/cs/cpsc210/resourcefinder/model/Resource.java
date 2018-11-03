@@ -39,28 +39,29 @@ public class Resource {
     public boolean offersAnyServicesInSet(Set<Service> requestedServices) {
 
         for (Service service : services) {
-            if (requestedService.contains(service)) {
+            if (requestedServices.contains(service)) {
                 return true;
             }
-            return false;
         }
+        return false;
+    }
 
         // MODIFIES: this
         // EFFECTS: adds service to this resource, if it's not already added
-        public void addService (Service service) {
-           services.add(service);
-        }
-
-        // MODIFIES: this
-        // EFFECTS: removes service from this resource
-        public void removeService (Service service){
-            services.remove(service);
-        }
-
-        // EFFECTS: returns services offered by this resource as unmodifiable set
-        public Set<Service> getServices () {
-
-            return services;   // stub
-        }
+    public void addService (Service service) {
+       services.add(service);
     }
+
+    // MODIFIES: this
+    // EFFECTS: removes service from this resource
+    public void removeService (Service service){
+        services.remove(service);
+    }
+
+    // EFFECTS: returns services offered by this resource as unmodifiable set
+    public Set<Service> getServices () {
+
+        return services;   // stub
+    }
+
 }

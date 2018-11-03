@@ -40,8 +40,8 @@ public class ResourceRegistry {
     // EFFECTS: returns set of resources in registry that offer all the services in requestedServices set
     public Set<Resource> getResourcesOfferingAllServicesInSet(Set<Service> requestedServices) {
         Set<Resource> result = new HashSet<>();
-        for (Resource resource : resources) {
-            if (resource.offerAllServicesInSet(requestedServices)) {
+        for (Resource resource: resources) {
+            if (resource.offersAllServicesInSet(requestedServices)) {
                 result.add(resource);
             }
         }
@@ -50,13 +50,12 @@ public class ResourceRegistry {
 
     // EFFECTS: returns set of resources in registry that off any of the services in requestedServices set
     public Set<Resource> getResourcesOfferingAnyServicesInSet(Set<Service> requestedServices) {
-
         Set<Resource> result = new HashSet<>();
-        for(Resource resource: resources) {
-            if(resource.offerAnyServiceInSet(requestedServices)) {
+        for (Resource resource: resources) {
+            if (resource.offersAnyServicesInSet(requestedServices)) {
                 result.add(resource);
             }
         }
-        return result;  // stub
+        return result;
     }
 }
