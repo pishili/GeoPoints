@@ -7,7 +7,8 @@ public enum Service {
     COUNSELLING("Counselling"),
     YOUTH("Youth services"),
     SENIOR("Senior services"),
-    LEGAL("Legal advice");
+    LEGAL("Legal advice"),
+    PROGRAMMING("Programming advice");
 
     private String displayName;
 
