@@ -63,6 +63,7 @@ public class SelectionStateTest {
         resources.add(r3);
         resources.add(r4);
         assertEquals(4, testSelectionState.getResourcesWithSelectedServices().size());
+        assertEquals(resources, testSelectionState.getResourcesWithSelectedServices());
     }
 
 //    @Test
