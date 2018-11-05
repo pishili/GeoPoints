@@ -67,6 +67,36 @@ public class SelectionStateTest {
     }
 
 //    @Test
+//    public void testDeSelectService() {
+//        testSelectionState.deselectService(Service.PROGRAMMING);
+//
+//
+////
+////        assertEquals(resources, testSelectionState.getResourcesWithSelectedServices());
+//    }
+
+
+    @Test
+    public void testSelectService() {
+        testSelectionState.selectService(Service.PROGRAMMING);
+
+        assertEquals(null, testSelectionState.getResourcesWithSelectedServices());
+//        assertEquals(resources, testSelectionState.getResourcesWithSelectedServices());
+    }
+
+    @Test
+    public void testDeSelectService() {
+        testSelectionState.deselectService(Service.FOOD);
+        Set<Resource> resources = new HashSet<>();
+        resources.add(r2);
+
+        assertEquals(resources, testSelectionState.getResourcesWithSelectedServices());
+//        assertEquals(resources, testSelectionState.getResourcesWithSelectedServices());
+    }
+
+
+
+//    @Test
 //    public void testSeX() {
 //        // template for unit tests
 //        fail("Test not implemented ");
