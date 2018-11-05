@@ -52,4 +52,12 @@ public class ResourceTest {
     public void testofferAnyServiceInRequestedServices(Set<Service> requestedServices) {
         assertTrue(testResource.offersAnyServicesInSet(requestedServices));
     }
+
+    @Test
+    public void testAddOneResource() {
+//        testRegistry.addResource(r1);
+//        List<Resource> resources = testRegistry.getResources();
+//        assertEquals(1, resources.size());
+//        assertTrue(resources.contains(r1));
+    }
 }
