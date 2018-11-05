@@ -6,6 +6,9 @@ import ca.ubc.cs.cpsc210.resourcefinder.model.SelectionState;
 import ca.ubc.cs.cpsc210.resourcefinder.model.Service;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import java.util.Set;
+import java.util.HashSet;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import static org.junit.jupiter.api.Assertions.fail;
 
@@ -23,15 +26,23 @@ public class SelectionStateTest {
     public void runBefore() {
         registry = new ResourceRegistry();
         loadResources();
-
         testSelectionState = new SelectionState(registry);
     }
 
     @Test
-    public void testXXXXXX() {
+    public void testsetSelectedServices() {
         // template for unit tests
-        fail("Test not implemented ");
+        Set<Service>  selectedServices= new HashSet<>();
+        selectedServices.add(Service.FOOD);
+        selectedServices.add(Service.SHELTER);
+        assertEquals(selectedServices, testSelectionState.getResourcesWithSelectedServices());
     }
+
+//    @Test
+//    public void testSeX() {
+//        // template for unit tests
+//        fail("Test not implemented ");
+//    }
 
     // MODIFIES: this
     // EFFECTS:  adds services to resources and resources to resource registry
