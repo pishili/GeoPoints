@@ -38,6 +38,21 @@ public class SelectionStateTest {
         assertEquals(selectedServices, testSelectionState.getResourcesWithSelectedServices());
     }
 
+    @Test
+    public void testSelectAny() {
+        testSelectionState.setSelectAny();
+        testSelectionState.selectService(Service.FOOD);
+        assertEquals(3, testSelectionState.getResourcesWithSelectedServices().size());
+    }
+
+    @Test
+    public void testSelectAll() {
+        testSelectionState.setSelectAll();
+        testSelectionState.selectService(Service.FOOD);
+        testSelectionState.selectService(Service.SHELTER);
+        assertEquals(2, testSelectionState.getResourcesWithSelectedServices().size());
+    }
+
 //    @Test
 //    public void testSeX() {
 //        // template for unit tests
