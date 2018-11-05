@@ -9,6 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.fail;
+import java.util.HashSet;
 
 
 
@@ -59,5 +60,15 @@ public class ResourceTest {
 //        List<Resource> resources = testRegistry.getResources();
 //        assertEquals(1, resources.size());
 //        assertTrue(resources.contains(r1));
+    }
+
+    @Test
+    public void testRemoveService(){
+        testResource.removeService(Service.COUNSELLING);
+        Set<Service> services = new HashSet<>();
+        services.add(Service.PROGRAMMING);
+        assertEquals(services,testResource.getServices());
+
+
     }
 }
