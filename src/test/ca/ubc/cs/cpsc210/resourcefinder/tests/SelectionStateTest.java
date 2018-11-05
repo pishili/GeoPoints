@@ -53,6 +53,18 @@ public class SelectionStateTest {
         assertEquals(2, testSelectionState.getResourcesWithSelectedServices().size());
     }
 
+    @Test
+    public void testSelectAnyReturnsAllResources() {
+        testSelectionState.setSelectAny();
+        testSelectionState.selectService(null);
+        Set<Resource> resources = new HashSet<>();
+        resources.add(r1);
+        resources.add(r2);
+        resources.add(r3);
+        resources.add(r4);
+        assertEquals(4, testSelectionState.getResourcesWithSelectedServices().size());
+    }
+
 //    @Test
 //    public void testSeX() {
 //        // template for unit tests
